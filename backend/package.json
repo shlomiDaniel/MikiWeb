@@ -4,8 +4,15 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "ng": "ng",
+    "start": "nodemon server.js",
+    "client": "cd ../frontend/mikiWeb && ng serve",
+    "server": "npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
   "author": "",
   "license": "ISC",
