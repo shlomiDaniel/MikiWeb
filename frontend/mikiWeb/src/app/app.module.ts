@@ -9,11 +9,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {Routes,RouterModule} from '@angular/router';
 import { PicturesService } from './pictures.service';
 import { from } from 'rxjs';
+import { PicturesEditComponent } from './pictures/pictures-edit/pictures-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
+    PicturesEditComponent,
   ],
   imports: [
     BrowserModule,
