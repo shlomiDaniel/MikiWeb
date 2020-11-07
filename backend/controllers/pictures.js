@@ -1,16 +1,16 @@
-const express = require("express");
-const router = express.Router();
 const Picture = require("../models/Pictures");
 //get all products
-router.get("/", (req, res) => {
+
+
+exports.getAllData = (req, res, next) => {
   Picture.find().then((data) => {
     res.status(200).json({
       pictures: data,
     });
   });
-});
+};
 
-router.post("/", (req, res) => {
+exports.createNewPicture = (req, res, next) => {
   const picture = new Picture({
     catalogNumber: req.body.catalogNumber,
     name: req.body.name,
@@ -25,27 +25,25 @@ router.post("/", (req, res) => {
       picture: data,
     });
   });
-});
+};
 
-router.put("/:_id", (req, res) => {
+exports.updatePictureData = (req, res, next) => {
   Picture.findOneAndUpdate({ _id: req.params._id }, req.body).then((data) => {
     res.status(200).json({
       picture: data,
     });
   });
   res.json({ success: "updateComplete" });
-});
+};
 
-router.get("/:_id", (req, res) => {
+exports.findOnePicture = (req, res, next) => {
   Picture.findById({ _id: req.params._id }).then((data) => {
     res.json({ picture: data });
   });
-});
+};
 
-router.delete("/:_id", (req, res) => {
+exports.deletePictureFromDB = (req, res, next) => {
   Picture.findByIdAndRemove({ _id: req.params._id }).then((data) => {
     res.json({ data: data });
   });
-});
-
-module.exports = router;
+};
