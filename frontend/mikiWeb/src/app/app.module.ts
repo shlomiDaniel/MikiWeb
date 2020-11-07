@@ -9,6 +9,7 @@ import { PicturesEditComponent } from './pictures/pictures-edit/pictures-edit.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PicturesService } from './pictures/pictures.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     NavbarComponent,
     PicturesEditComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
