@@ -4,12 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
-import {Routes,RouterModule} from '@angular/router';
-import { PicturesService } from './pictures.service';
-import { from } from 'rxjs';
 import { PicturesEditComponent } from './pictures/pictures-edit/pictures-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PicturesService } from './pictures/pictures.service';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,12 +19,10 @@ import { PicturesEditComponent } from './pictures/pictures-edit/pictures-edit.co
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     AppRoutingModule,
-   
-    RouterModule.forRoot([
-      {path:"home",component:HomeComponent}
-    ])
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [PicturesService],
   bootstrap: [AppComponent]

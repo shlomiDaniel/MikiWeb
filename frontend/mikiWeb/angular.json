@@ -19,14 +19,15 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -66,8 +67,7 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "mikiWeb:build:production",
-              "proxyConfig": "src/proxy.conf.json"
+              "browserTarget": "mikiWeb:build:production"
             }
           }
         },
@@ -84,14 +84,15 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           }
         },
         "lint": {
@@ -102,9 +103,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -114,7 +113,6 @@
             "devServerTarget": "mikiWeb:serve"
           },
           "configurations": {
-           
             "production": {
               "devServerTarget": "mikiWeb:serve:production"
             }
@@ -123,8 +121,5 @@
       }
     }
   },
-  "defaultProject": "mikiWeb",
-  "cli": {
-    "analytics": "32234f39-a8f4-44cd-9b3d-dbf52a2c8c0f"
-  }
+  "defaultProject": "mikiWeb"
 }
