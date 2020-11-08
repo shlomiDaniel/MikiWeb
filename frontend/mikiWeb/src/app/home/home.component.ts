@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Picture } from '../pictures/Picture.model';
-import { PicturesService } from '../pictures/pictures.service';
+import { Picture } from '../core/models/Picture.model';
+import { PicturesService } from '../core/services/pictures.service';
 
 @Component({
   selector: 'app-home',

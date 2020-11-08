@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Picture } from './Picture.model';
+import { Picture } from '../models/Picture.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { Router } from '@angular/router';
