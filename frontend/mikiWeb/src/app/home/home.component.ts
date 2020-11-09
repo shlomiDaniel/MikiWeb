@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit {
   pictures: any;
   ngOnInit(): void {
     this.pictures = this.pictureService.getAllPictures();
-    console.log(this.pictures);
     this.picSub = this.pictureService
       .getPictureListener()
       .subscribe((pictures: Picture[]) => {

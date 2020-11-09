@@ -6,19 +6,31 @@ const PORT = 4000;
 const pictureRoute = require("./routes/pictures");
 
 const cors = require("cors");
-app.use(cors());
+
 const keys = require("./config/keys");
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
+app.use(cors());
 
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "OPTIONS, GET, POST, PUT, PATCH, DELETE"
+  );
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  // res.setHeader("Access-Control-Allow-Credentials", "true");
+  next();
+});
 
 //connected to server in port 4500
 app.listen(PORT, () => {
   console.log(`connected to server complete with port: ${PORT}`);
 });
 
-
-//connect to mongoDb 
+//connect to mongoDb
 mongoose
   .connect(keys.mongodb.dbURI, { useNewUrlParser: true })
   .then((result) => {
@@ -30,8 +42,5 @@ mongoose
     console.log(err);
   });
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.urlencoded({ extended: false }));
-
 //routers
-app.use('/pictures', pictureRoute);
+app.use("/pictures", pictureRoute);

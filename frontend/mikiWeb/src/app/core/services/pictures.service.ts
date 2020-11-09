@@ -15,9 +15,7 @@ export class PicturesService {
       .get<{ pictures: any }>('http://localhost:4000/pictures')
       .subscribe((pictureData) => {
         this.pictures = pictureData.pictures;
-        console.log(pictureData.pictures);
         this.pictureUpdate.next([...this.pictures]);
-        console.log(this.pictures);
       });
     return this.pictures;
   }
