@@ -1,0 +1,16 @@
+body {
+    height: 100%;
+}
+
+.regBackground {
+    background-color: lavender;
+}
+
+.btn-facebook {
+    background-color: #405D9D;
+    color: #fff;
+}
+.btn-twitter {
+    background-color: #42AEEC;
+    color: #fff;
+}
