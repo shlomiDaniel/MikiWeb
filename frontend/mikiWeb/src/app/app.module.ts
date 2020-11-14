@@ -9,7 +9,6 @@ import { PicturesEditComponent } from './pictures/pictures-edit/pictures-edit.co
 import { RegistrationComponent } from './users/user/auth/registration/registration.component';
 import { LoginComponent } from './users/user/auth/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core-module.module';
 import { FooterComponent } from './footer/footer.component';
 
@@ -22,14 +21,13 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     RegistrationComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
     CoreModule
   ],
   providers: [],
