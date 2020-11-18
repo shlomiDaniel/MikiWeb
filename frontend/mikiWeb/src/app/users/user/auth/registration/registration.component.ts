@@ -6,12 +6,12 @@ import { NgForm } from '@angular/forms';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css'],
 })
+
 export class RegistrationComponent implements OnInit {
-  constructor() {}
+  constructor() {};
 
-  ngOnInit(): void {}
+  ngOnInit(): void {};
 
-  onRegistration(regForm: NgForm): void {
-
-  }
+  // onRegistration(regForm: NgForm): void {
+  // }
 }

@@ -1,28 +1,46 @@
-<div class="container">
-  <h4 class="card-title mt-3 text-center">יצירת משתמש</h4>
-  <div class="row justify-content-center" dir="rtl">
-    <a href="" class="btn btn-block btn-twitter col-2 ml-1"> <i class="fab fa-twitter"></i>הרשמה עם Twitter</a>
-    <a href="" class="btn btn-block btn-facebook col-2 mr-1"> <i class="fab fa-facebook-f"></i> הרשמה עם Facebook</a>
+<section>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+        <div class="row justify-content-center">
+          <div class="col-5 text-center" dir="rtl">
+            <h3>הרשמה לאתר</h3>
+              <a href="" class="btn btn-block btn-twitter">הרשמה עם Twitter <i class="fab fa-twitter"></i></a>
+              <a href="" class="btn btn-block btn-facebook">הרשמה עם Facebook <i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col mt-4">
+            <input type="text" class="form-control" placeholder="שם משתמש" dir="rtl">
+            <input type="text" class="form-control" placeholder="שם פרטי" dir="rtl">
+            <input type="text" class="form-control" placeholder="שם משפחה" dir="rtl">
+          </div>
+        </div>
+        <div class="row align-items-center mt-4">
+          <div class="col">
+            <input type="email" class="form-control" placeholder="כתובת דואר אלקטוני" dir="rtl">
+          </div>
+        </div>
+        <div class="row align-items-center mt-4" dir="rtl">
+          <div class="col">
+            <input type="password" class="form-control" placeholder="סיסמה">
+          </div>
+          <div class="col">
+            <input type="password" class="form-control" placeholder="חזור על הסיסמה">
+          </div>
+        </div>
+        <div class="row justify-content-start mt-4">
+          <div class="col">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input">
+                קראתי ואני מאשר את <a href="">תנאי שימוש</a>
+              </label>
+            </div>
+            <button class="btn btn-primary mt-4">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <h1> או </h1>
-  <form class="row justify-content-center">
-    <div class="col-2 input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-      </div>
-      <input name="" class="form-control" placeholder="שם פרטי" type="text">
-    </div> <!-- form-group// -->
-    <div class="col-2 input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-      </div>
-      <input name="" class="form-control" placeholder="שם משפחה" type="text">
-    </div> <!-- form-group// -->
-
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary btn-block"> הרשמה </button>
-    </div> <!-- form-group// -->
-    <p class="text-center">משתמש רשום? <a href="">כניסה</a> </p>
-    
-  </form>
-</div>
+</section>
