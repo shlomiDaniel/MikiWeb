@@ -6,14 +6,38 @@
           <div class="col-5 text-center" dir="rtl">
             <h3>הרשמה לאתר</h3>
               <a href="" class="btn btn-block btn-twitter">הרשמה עם Twitter <i class="fab fa-twitter"></i></a>
-              <a href="" class="btn btn-block btn-facebook">הרשמה עם Facebook <i class="fab fa-facebook-f"></i></a>
+              <a href="" class="btn btn-block btn-facebook my-1">הרשמה עם Facebook <i class="fab fa-facebook-f"></i></a>
           </div>
         </div>
-        <div class="row align-items-center">
-          <div class="col mt-4">
-            <input type="text" class="form-control" placeholder="שם משתמש" dir="rtl">
-            <input type="text" class="form-control" placeholder="שם פרטי" dir="rtl">
-            <input type="text" class="form-control" placeholder="שם משפחה" dir="rtl">
+        <h2 class="line-for-reg mt-3"><span>או</span></h2>
+        <div class="row justify-content-lg-end" dir="ltr">
+          <div class="col-5 mt-4" dir="rtl">
+            <input type="text" class="form-control" placeholder="שם משתמש">
+          </div>
+        </div>
+        <div class="row justify-content-end" dir="ltr">
+          <div class="col-5 mt-4" dir="rtl">
+            <input type="text" class="form-control" placeholder="שם משפחה">
+            <input type="text" class="form-control mt-2" placeholder="כתובת">
+            <fieldset class="text-center mt-2">
+              <label for="radio-1">זכר</label>
+              <input class="ml-3" type="radio" name="radio-1" id="radio-1">
+              <label for="radio-2">נקבה</label>
+              <input class="ml-3" type="radio" name="radio-1" id="radio-2">
+              <label for="radio-3">אחר</label>
+              <input type="radio" name="radio-1" id="radio-3">
+            </fieldset>
+            <input class="mt-1" type="date" name="bday">
+          </div>
+          <div class="col-5 mt-4" dir="rtl">
+            <input type="text" class="form-control" placeholder="שם פרטי">
+            <input type="text" class="form-control mt-2" placeholder="עיר">
+          <div class="text-center mt-2">
+            <label>מין:</label>
+          </div>
+            <div class="text-center mt-1">
+              <label>תאריך לידה:</label>
+            </div>
           </div>
         </div>
         <div class="row align-items-center mt-4">
@@ -29,8 +53,8 @@
             <input type="password" class="form-control" placeholder="חזור על הסיסמה">
           </div>
         </div>
-        <div class="row justify-content-start mt-4">
-          <div class="col">
+        <div class="row mt-4">
+          <div class="col text-center">
             <div class="form-check">
               <label class="form-check-label">
                 <input type="checkbox" class="form-check-input">
