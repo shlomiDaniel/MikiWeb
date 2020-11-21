@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-8 col-xl-6 border border-dark mt-1">
-        <form>
+        <form (ngSubmit)="onSubmit(regFormElement)" #regFormElement="ngForm">
           <h3 style="background-color: black; color: white;" class="mt-2 text-center">הרשמה לאתר</h3>
           <div class="row justify-content-center">
             <div class="text-center" dir="rtl">
@@ -13,28 +13,28 @@
           <h2 class="line-for-reg mt-3"><span>או</span></h2>
           <div class="row justify-content-end" dir="ltr">
             <div class="col-5 mt-4" dir="rtl">
-              <input type="text" class="form-control" placeholder="שם משתמש">
+              <input type="text" class="form-control" placeholder="שם משתמש" ngModel name="username">
             </div>
           </div>
           <div class="row justify-content-end" dir="ltr">
             <div class="mt-4" dir="rtl">
-              <input type="text" class="form-control" placeholder="שם משפחה">
-              <input type="text" class="form-control mt-2" placeholder="כתובת">
+              <input type="text" class="form-control" placeholder="שם משפחה" ngModel name="lastname">
+              <input type="text" class="form-control mt-2" placeholder="כתובת" ngModel name="address">
               <fieldset class="text-center mt-2" dir="ltr">
                 <label for="radio-1">אחר</label>
-                <input class="ml-1" type="radio" name="radio-1" id="radio-1">
+                <input class="ml-1" type="radio" name="radio-1" id="radio-1" ngModel value="othergender">
                 <label class="ml-3" for="radio-2">נקבה</label>
-                <input class="ml-1" type="radio" name="radio-1" id="radio-2">
+                <input class="ml-1" type="radio" name="radio-1" id="radio-2" ngModel value="femalegender">
                 <label class="ml-3" for="radio-3">זכר</label>
-                <input class="ml-1" type="radio" name="radio-1" id="radio-3">
+                <input class="ml-1" type="radio" name="radio-1" id="radio-3" ngModel value="malegender">
               </fieldset>
               <div class="text-center">
-                <input class="mt-1" type="date" name="bday">
+                <input class="mt-1" type="date" name="bday" ngModel name="gender">
               </div>
             </div>
             <div class="col-5 mt-4" dir="rtl">
-              <input type="text" class="form-control" placeholder="שם פרטי">
-              <input type="text" class="form-control mt-2" placeholder="עיר">
+              <input type="text" class="form-control" placeholder="שם פרטי" ngModel name="firstname">
+              <input type="text" class="form-control mt-2" placeholder="עיר" ngModel name="city">
               <div class="text-center mt-2">
                 <label>מין:</label>
               </div>
@@ -42,21 +42,21 @@
                 <label>תאריך לידה:</label>
               </div>
               <div class="text-right mt-3">
-                <input type="tel" class="form-control" placeholder="טלפון נייד">
+                <input type="tel" class="form-control" placeholder="טלפון נייד" ngModel name="phonenumber">
               </div>
             </div>
           </div>
           <div class="row align-items-center mt-4">
             <div class="col">
-              <input type="email" class="form-control" placeholder="כתובת דואר אלקטוני" dir="rtl">
+              <input type="email" class="form-control" placeholder="כתובת דואר אלקטוני" dir="rtl" ngModel name="email">
             </div>
           </div>
           <div class="row align-items-center mt-4" dir="rtl">
             <div class="col">
-              <input type="password" class="form-control" placeholder="סיסמה">
+              <input type="password" class="form-control" placeholder="סיסמה" ngModel name="password1">
             </div>
             <div class="col">
-              <input type="password" class="form-control" placeholder="חזור על הסיסמה">
+              <input type="password" class="form-control" placeholder="חזור על הסיסמה" ngModel name="password2">
             </div>
           </div>
           <div class="row mt-4">

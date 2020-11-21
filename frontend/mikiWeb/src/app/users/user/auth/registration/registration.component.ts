@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -12,6 +12,7 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit(): void {};
 
-  // onRegistration(regForm: NgForm): void {
-  // }
+  onSubmit(form: NgForm): void {
+    console.log(form);
+  }
 }
