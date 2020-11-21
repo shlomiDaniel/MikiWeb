@@ -1,17 +1,17 @@
 <section>
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+      <div class="col-12 col-md-8 col-lg-8 col-xl-6 border border-dark mt-1">
+        <h3 style="background-color: black; color: white;" class="mt-2 text-center">הרשמה לאתר</h3>
         <div class="row justify-content-center">
-          <div class="col-md-6 col-sm-3 text-center" dir="rtl">
-            <h3>הרשמה לאתר</h3>
-              <a href="" class="btn btn-block btn-twitter">הרשמה עם Twitter <i class="fab fa-twitter"></i></a>
-              <a href="" class="btn btn-block btn-facebook my-1">הרשמה עם Facebook <i class="fab fa-facebook-f"></i></a>
+          <div class="text-center" dir="rtl">
+            <a href="" class="btn btn-block btn-twitter">הרשמה עם Twitter <i class="fab fa-twitter"></i></a>
+            <a href="" class="btn btn-block btn-facebook my-1">הרשמה עם Facebook <i class="fab fa-facebook-f"></i></a>
           </div>
         </div>
         <h2 class="line-for-reg mt-3"><span>או</span></h2>
         <div class="row justify-content-end" dir="ltr">
-          <div class="col-5 mt-4 " dir="rtl">
+          <div class="col-5 mt-4" dir="rtl">
             <input type="text" class="form-control" placeholder="שם משתמש">
           </div>
         </div>
@@ -19,22 +19,24 @@
           <div class="mt-4" dir="rtl">
             <input type="text" class="form-control" placeholder="שם משפחה">
             <input type="text" class="form-control mt-2" placeholder="כתובת">
-            <fieldset class="text-center mt-2">
-              <label for="radio-1">זכר</label>
-              <input class="ml-3" type="radio" name="radio-1" id="radio-1">
-              <label for="radio-2">נקבה</label>
-              <input class="ml-3" type="radio" name="radio-1" id="radio-2">
-              <label for="radio-3">אחר</label>
-              <input type="radio" name="radio-1" id="radio-3">
+            <fieldset class="text-center mt-2" dir="ltr">
+              <label for="radio-1">אחר</label>
+              <input class="ml-1" type="radio" name="radio-1" id="radio-1">
+              <label class="ml-3" for="radio-2">נקבה</label>
+              <input class="ml-1" type="radio" name="radio-1" id="radio-2">
+              <label class="ml-3" for="radio-3">זכר</label>
+              <input class="ml-1" type="radio" name="radio-1" id="radio-3">
             </fieldset>
-            <input class="mt-1" type="date" name="bday">
+            <div class="text-center">
+              <input class="mt-1" type="date" name="bday">
+            </div>
           </div>
           <div class="col-5 mt-4" dir="rtl">
             <input type="text" class="form-control" placeholder="שם פרטי">
             <input type="text" class="form-control mt-2" placeholder="עיר">
-          <div class="text-center mt-2">
-            <label>מין:</label>
-          </div>
+            <div class="text-center mt-2">
+              <label>מין:</label>
+            </div>
             <div class="text-center mt-1">
               <label>תאריך לידה:</label>
             </div>
@@ -61,7 +63,9 @@
                 קראתי ואני מאשר את <a href="">תנאי שימוש</a>
               </label>
             </div>
-            <button class="btn btn-primary mt-4">Submit</button>
+            <div class="mt-3" style="padding-bottom: 2%;">
+              <button class="btn btn-primary">הירשם</button>
+            </div>
           </div>
         </div>
       </div>
