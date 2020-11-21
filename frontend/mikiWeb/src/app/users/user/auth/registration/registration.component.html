@@ -11,15 +11,16 @@
             </div>
           </div>
           <h2 class="line-for-reg mt-3"><span>או</span></h2>
-          <div class="row justify-content-end" dir="ltr">
-            <div class="col-5 mt-4" dir="rtl">
-              <input type="text" class="form-control" placeholder="שם משתמש" ngModel name="username">
+          <div class="row justify-content-end">
+            <div class="col-5 mt-4 text-center">
+              <input type="text" class="form-control text-right" placeholder="שם משתמש" ngModel name="username" required #userNameElement="ngModel">
+              <span class="text-muted" *ngIf="!userNameElement.valid && userNameElement.touched"><small>שם משתמש קיים או לא תקין</small></span>
             </div>
           </div>
           <div class="row justify-content-end" dir="ltr">
             <div class="mt-4" dir="rtl">
-              <input type="text" class="form-control" placeholder="שם משפחה" ngModel name="lastname">
-              <input type="text" class="form-control mt-2" placeholder="כתובת" ngModel name="address">
+              <input type="text" class="form-control" placeholder="שם משפחה" ngModel name="lastname" required>
+              <input type="text" class="form-control mt-2" placeholder="כתובת" ngModel name="address" required>
               <fieldset class="text-center mt-2" dir="ltr">
                 <label for="radio-1">אחר</label>
                 <input class="ml-1" type="radio" name="radio-1" id="radio-1" ngModel value="othergender">
@@ -29,12 +30,12 @@
                 <input class="ml-1" type="radio" name="radio-1" id="radio-3" ngModel value="malegender">
               </fieldset>
               <div class="text-center">
-                <input class="mt-1" type="date" name="bday" ngModel name="gender">
+                <input class="mt-1" type="date" name="bday" ngModel name="birthdaydate" required>
               </div>
             </div>
             <div class="col-5 mt-4" dir="rtl">
-              <input type="text" class="form-control" placeholder="שם פרטי" ngModel name="firstname">
-              <input type="text" class="form-control mt-2" placeholder="עיר" ngModel name="city">
+              <input type="text" class="form-control" placeholder="שם פרטי" ngModel name="firstname" required>
+              <input type="text" class="form-control mt-2" placeholder="עיר" ngModel name="city" required>
               <div class="text-center mt-2">
                 <label>מין:</label>
               </div>
@@ -42,21 +43,21 @@
                 <label>תאריך לידה:</label>
               </div>
               <div class="text-right mt-3">
-                <input type="tel" class="form-control" placeholder="טלפון נייד" ngModel name="phonenumber">
+                <input type="tel" class="form-control" placeholder="טלפון נייד" ngModel name="phonenumber" required>
               </div>
             </div>
           </div>
           <div class="row align-items-center mt-4">
             <div class="col">
-              <input type="email" class="form-control" placeholder="כתובת דואר אלקטוני" dir="rtl" ngModel name="email">
+              <input type="email" class="form-control" placeholder="כתובת דואר אלקטוני" dir="rtl" ngModel name="email" required email>
             </div>
           </div>
           <div class="row align-items-center mt-4" dir="rtl">
             <div class="col">
-              <input type="password" class="form-control" placeholder="סיסמה" ngModel name="password1">
+              <input type="password" class="form-control" placeholder="סיסמה" ngModel name="password1" required>
             </div>
             <div class="col">
-              <input type="password" class="form-control" placeholder="חזור על הסיסמה" ngModel name="password2">
+              <input type="password" class="form-control" placeholder="חזור על הסיסמה" ngModel name="password2" required>
             </div>
           </div>
           <div class="row mt-4">
@@ -68,7 +69,7 @@
                 </label>
               </div>
               <div class="mt-3" style="padding-bottom: 2%;">
-                <button type="submit" class="btn btn-primary">הירשם</button>
+                <button [disabled]="!regFormElement.valid" type="submit" class="btn btn-primary">הירשם</button>
               </div>
             </div>
           </div>
