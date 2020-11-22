@@ -1,10 +1,9 @@
-export interface User {
+export interface UserDataModel {
   userName: string;
   userLastName: string;
   userAge: number;
+  userAddr: string;
   userCity: string;
-  userAddress: string;
   userPhone: number;
   userEmail: string;
-  userPassword: string;
 }

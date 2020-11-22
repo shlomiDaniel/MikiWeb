@@ -4,6 +4,7 @@ const app = express();
 const PORT = 4000;
 
 const pictureRoute = require("./routes/pictures");
+const usersRoute = require("./routes/users");
 
 const cors = require("cors");
 
@@ -44,3 +45,4 @@ mongoose
 
 //routers
 app.use("/pictures", pictureRoute);
+app.use("/users", usersRoute);

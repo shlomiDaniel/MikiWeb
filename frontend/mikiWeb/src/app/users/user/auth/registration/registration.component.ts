@@ -13,6 +13,6 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {};
 
   onSubmit(form: NgForm): void {
-    console.log(form);
+    
   }
 }
