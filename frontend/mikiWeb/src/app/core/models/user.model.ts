@@ -1,9 +1,11 @@
 export interface UserDataModel {
   userName: string;
+  userFirstName: string;
   userLastName: string;
-  userAge: number;
-  userAddr: string;
+  userAge: Date;
   userCity: string;
+  userAddress: string;
   userPhone: number;
-  userEmail: string;
+  email: string;
+  password: string;
 }

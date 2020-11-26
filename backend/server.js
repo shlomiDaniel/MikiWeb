@@ -26,7 +26,6 @@ app.use((req, res, next) => {
   next();
 });
 
-//connected to server in port 4500
 app.listen(PORT, () => {
   console.log(`connected to server complete with port: ${PORT}`);
 });

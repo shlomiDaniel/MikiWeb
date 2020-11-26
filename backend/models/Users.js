@@ -7,14 +7,18 @@ const userSchema = new Schema({
   userName: {
     type: String,
     required: true,
-    unique: true,
+    unique: true
+  },
+  userFirstName: {
+    type: String,
+    required: true,
   },
   userLastName: {
     type: String,
     required: true,
   },
   userAge: {
-    type: Number,
+    type: Date,
     required: true,
   },
   userCity: {
