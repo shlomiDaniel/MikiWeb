@@ -1,1 +1,35 @@
-<p>login works!</p>
+<section>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-8 col-xl-6 border border-dark mt-1">
+          <form (ngSubmit)="onSubmit(regFormElement)" #regFormElement="ngForm">
+            <h3 style="background-color: black; color: white;" class="mt-2 text-center">כניסה לאתר</h3>
+            <div class="row justify-content-center">
+              <div class="text-center" dir="rtl">
+                <a href="" class="btn btn-block btn-twitter">כניסה עם Twitter <i class="fab fa-twitter"></i></a>
+                <a href="" class="btn btn-block btn-facebook my-1">כניסה עם Facebook <i class="fab fa-facebook-f"></i></a>
+              </div>
+            </div>
+            <h2 class="line-for-reg mt-3"><span>או</span></h2>
+            <div class="row align-items-center mt-4">
+              <div class="col">
+                <input type="email" class="form-control" placeholder="כתובת דואר אלקטוני" dir="rtl" ngModel name="email" required email>
+              </div>
+            </div>
+            <div class="row align-items-center mt-4" dir="rtl">
+              <div class="col">
+                <input type="password" class="form-control" placeholder="סיסמה" ngModel name="password1" required>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col text-center">
+                <div class="mt-3" style="padding-bottom: 2%;">
+                  <button [disabled]="!regFormElement.valid" type="submit" class="btn btn-primary">כניסה</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
