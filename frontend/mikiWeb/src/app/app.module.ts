@@ -11,6 +11,8 @@ import { LoginComponent } from './users/user/auth/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from './core/core-module.module';
 import { FooterComponent } from './footer/footer.component';
+import { PictureAddComponent } from './pictures/picture-add/picture-add.component';
+import { AdminPageComponent } from './users/user/admin-page/admin-page.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { FooterComponent } from './footer/footer.component';
     RegistrationComponent,
     LoginComponent,
     FooterComponent,
+    PictureAddComponent,
+    AdminPageComponent,
   ],
   imports: [
     BrowserModule,

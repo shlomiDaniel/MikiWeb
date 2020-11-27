@@ -42,7 +42,6 @@ export class UserDataService {
     this.httpToBackend
       .post('http://localhost:4000/users/login', userDataForLogin)
       .subscribe((responseData) => {
-        console.log(responseData);
       });
   }
 }

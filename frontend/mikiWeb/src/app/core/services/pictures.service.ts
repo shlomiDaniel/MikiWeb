@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Picture } from '../models/Picture.model';
+import { PictureModel } from '../models/Picture.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { Router } from '@angular/router';
@@ -7,10 +7,10 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class PicturesService {
-  private pictures: Picture[];
-  private pictureUpdate = new Subject<Picture[]>();
+  private pictures: PictureModel[];
+  private pictureUpdate = new Subject<PictureModel[]>();
   constructor(public http: HttpClient, private router: Router) {}
-  getAllPictures(): Picture[] {
+  getAllPictures(): PictureModel[] {
     this.http
       .get<{ pictures: any }>('http://localhost:4000/pictures')
       .subscribe((pictureData) => {
@@ -19,7 +19,7 @@ export class PicturesService {
       });
     return this.pictures;
   }
-  getPictureListener(): Observable<Picture[]> {
+  getPictureListener(): Observable<PictureModel[]> {
     return this.pictureUpdate.asObservable();
   }
 }

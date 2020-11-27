@@ -1,9 +1,10 @@
-export interface Picture {
-  catalogNumber: string;
+export interface PictureModel {
+  catalogNumber: number;
   name: string;
-  price: string;
+  price: number;
   imgPath: string;
   description: string;
-  size: string;
-  inStock: string;
+  size_x: number;
+  size_y: number
+  inStock: number;
 }
