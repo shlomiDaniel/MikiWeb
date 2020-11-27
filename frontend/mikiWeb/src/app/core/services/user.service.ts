@@ -7,7 +7,6 @@ export class UserDataService {
   constructor(private httpToBackend: HttpClient) {}
 
   createUserData(
-    userName: string,
     userFirstName: string,
     userLastName: string,
     userAge: Date,
@@ -18,7 +17,6 @@ export class UserDataService {
     password: string
   ) {
     const userData: UserDataModel = {
-      userName: userName,
       userFirstName: userFirstName,
       userLastName: userLastName,
       userAge: userAge,
@@ -32,6 +30,19 @@ export class UserDataService {
       .post('http://localhost:4000/users/registration', userData)
       .subscribe((responeData) => {
         console.log(responeData);
+      });
+  }
+
+  loginUser(email: string, password: string) {
+    const userDataForLogin = {
+      // i did JavaScript object for not open one more model for 1 use
+      email: email,
+      password: password,
+    };
+    this.httpToBackend
+      .post('http://localhost:4000/users/login', userDataForLogin)
+      .subscribe((responseData) => {
+        console.log(responseData);
       });
   }
 }

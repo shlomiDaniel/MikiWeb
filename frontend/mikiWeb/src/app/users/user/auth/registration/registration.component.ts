@@ -18,7 +18,6 @@ export class RegistrationComponent implements OnInit {
     }
     console.log(form.value);
     this.userDataService.createUserData(
-      form.value.username,
       form.value.firstname,
       form.value.lastname,
       form.value.birthdaydate,
