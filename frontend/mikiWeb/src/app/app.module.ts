@@ -13,6 +13,7 @@ import { CoreModule } from './core/core-module.module';
 import { FooterComponent } from './footer/footer.component';
 import { PictureAddComponent } from './users/user/admin-page/picture-add/picture-add.component';
 import { AdminPageComponent } from './users/user/admin-page/admin-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AdminPageComponent } from './users/user/admin-page/admin-page.component
     FooterComponent,
     PictureAddComponent,
     AdminPageComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
