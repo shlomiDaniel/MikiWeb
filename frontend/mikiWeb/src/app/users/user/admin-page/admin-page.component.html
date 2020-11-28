@@ -1,19 +1,24 @@
 <div class="container mt-4" dir="rtl">
-  <ul class="nav nav-tabs">
-    <li class="nav-item ml-2">
-      <a class="nav-link active" href="#">הוספת תמונה</a>
-    </li>
-    <li class="nav-item ml-2">
-      <a class="nav-link active" href="#">צפיה בתמונות</a>
-    </li>
-    <li class="nav-item ml-2">
-      <a class="nav-link active" href="#">ניהול תמונות</a>
-    </li>
-    <li class="nav-item ml-2">
-      <a class="nav-link active" href="#">ניהול משתמשים</a>
-    </li>
-    <li class="nav-item ml-2">
-        <a class="nav-link active" href="#">צפיה בהזמנות</a>
+  <div class="row justify-content-center">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item ml-2" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" role="tab" routerLink="addproduct" data-toggle="tab">הוספת תמונה</a>
       </li>
-  </ul>
+      <li class="nav-item ml-2" outerLinkActive="active">
+        <a class="nav-link" role="tab" routerLink="orderview" data-toggle="tab">צפיה בתמונות</a>
+      </li>
+      <li class="nav-item ml-2">
+        <a class="nav-link">ניהול תמונות</a>
+      </li>
+      <li class="nav-item ml-2">
+        <a class="nav-link">ניהול משתמשים</a>
+      </li>
+      <li class="nav-item ml-2">
+        <a class="nav-link">צפיה בהזמנות</a>
+      </li>
+    </ul>
+  </div>
+  <div class="row justify-content-center mt-3 border border-danger">
+    <router-outlet></router-outlet>
+  </div>
 </div>
