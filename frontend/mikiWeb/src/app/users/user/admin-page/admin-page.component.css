@@ -1,0 +1,11 @@
+.admin-text-color {
+    color: #343a40;
+}
+
+a.nav-link.active {
+    color: blue;
+}
+
+a.nav-link {
+    color: black;
+}

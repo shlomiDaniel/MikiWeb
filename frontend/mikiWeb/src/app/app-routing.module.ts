@@ -16,7 +16,7 @@ const routes: Routes = [
     path: 'admin',
     component: AdminPageComponent,
     children: [
-      { path: 'addproduct', component: PictureAddComponent },
+      { path: 'addpicture', component: PictureAddComponent },
       { path: 'orderview', component: OrderViewComponent },
     ],
   },
