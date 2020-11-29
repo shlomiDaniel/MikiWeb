@@ -2,7 +2,30 @@
       <div class="col-4 title-color-background text-center">
         <h3>הוספת תמונה לחנות</h3>
       </div>
-      <div class="row">
-
-      </div>
     </div>
+    <form (submit)="addPictureToStore(ngModelAddPicToStore)" #ngModelAddPicToStore="ngForm">
+
+      <div class="mt-2 border border-dark p-2">
+        <div class="row mb-3 justify-content-center">
+          <p class="h4">פרטי היצירה</p>
+        </div>
+        <div class="row">
+          <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">שם היצירה:</label>
+          <input type="text" class="form-control col-3" placeholder="שם יצירה">
+          <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">מספר קטגוריה:</label>
+          <input type="text" class="form-control col-3" placeholder="מספר קטגוריה">
+        </div>
+        <div class="row mt-2">
+          <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">מחיר:</label>
+          <input type="text" class="form-control col-3" placeholder="ש״ח">
+          <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">קיים במלאי:</label>
+          <input type="text" class="form-control col-3" placeholder="אחליף את זה כן או לא">
+        </div>
+        <div class="row mt-2">
+          <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">רחוב - x:</label>
+          <input type="text" class="form-control col-3" placeholder="ס״מ">
+          <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">אורך - y:</label>
+          <input type="text" class="form-control col-3" placeholder="ס״מ">
+        </div>
+      </div>
+    </form>

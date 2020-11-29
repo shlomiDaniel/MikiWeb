@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-picture-add',
@@ -10,6 +11,10 @@ export class PictureAddComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addPictureToStore(addPicToStoreForm: NgForm): void {
+    console.log("work in progress");
   }
 
 }
