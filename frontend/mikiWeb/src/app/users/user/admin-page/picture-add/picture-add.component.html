@@ -8,40 +8,44 @@
         <div class="row mb-3 justify-content-center">
           <p class="h4">פרטי היצירה</p>
         </div>
-        <div class="row">
-          <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">שם היצירה:</label>
-          <input type="text" class="form-control col-3" placeholder="שם יצירה">
-          <div class="row">
-            <label class="text-left" style="font-size: 1.3rem;">בחירה:</label>
-            <img id="pic" class="pr-1" style=" width: 275px; height: 200px;" />
+        <div class="row ml-5">
+          <div class="col-sm-8">
+            <div class="row">
+              <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">שם היצירה:</label>
+              <input type="text" class="form-control col-5" placeholder="שם יצירה">
+            </div>
+            <div class="row mt-2">
+              <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">מספר קטגוריה:</label>
+              <input type="text" class="form-control col-5" placeholder="מספר קטגוריה">
+            </div>
+            <div class="row mt-2">
+              <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">מחיר:</label>
+              <input type="text" class="form-control col-5" placeholder="ש״ח">
+            </div>
+            <div class="row mt-2">
+              <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">קיים במלאי:</label>
+              <input type="text" class="form-control col-5" placeholder="אחליף את זה כן או לא">
+            </div>
+            <div class="row mt-2">
+              <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">רחוב - x:</label>
+              <input type="text" class="form-control col-5" placeholder="ס״מ">
+            </div>
+            <div class="row mt-2">
+              <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">אורך - y:</label>
+              <input type="text" class="form-control col-5" placeholder="ס״מ">
+            </div>
+            <div class="row mt-2">
+              <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">תצוגת היצירה:</label>
+              <div class="custom-file col-5">
+                <input type="file" class="custom-file-input" id="picload"
+                  oninput="pic.src=window.URL.createObjectURL(this.files[0])">
+                <label class="custom-file-label" for="picload" data-browse="בחירה"></label>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="row mt-2">
-          <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">מספר קטגוריה:</label>
-          <input type="text" class="form-control col-3" placeholder="מספר קטגוריה">
-        </div>
-        <div class="row mt-2">
-          <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">מחיר:</label>
-          <input type="text" class="form-control col-3" placeholder="ש״ח">
-        </div>
-        <div class="row mt-2">
-          <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">קיים במלאי:</label>
-          <input type="text" class="form-control col-3" placeholder="אחליף את זה כן או לא">
-        </div>
-        <div class="row mt-2">
-          <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">רחוב - x:</label>
-          <input type="text" class="form-control col-3" placeholder="ס״מ">
-        </div>
-        <div class="row mt-2">
-          <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">אורך - y:</label>
-          <input type="text" class="form-control col-3" placeholder="ס״מ">
-        </div>
-        <div class="row mt-2">
-          <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">תצוגת היצירה:</label>
-          <div class="custom-file col-3">
-            <input type="file" class="custom-file-input" id="picload"
-              oninput="pic.src=window.URL.createObjectURL(this.files[0])">
-            <label class="custom-file-label" for="picload" data-browse="בחירה"></label>
+          <div class="col-4 p-3 text-center">
+            <label style="font-size: 1.3rem;" class=""><u>יצירה שנבחרה</u></label>
+            <img id="pic" class="pr-1" style=" width: 275px; height: 200px;" />
           </div>
         </div>
       </div>
