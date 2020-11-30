@@ -15,15 +15,3 @@ a.nav-link {
 .navbar-background-color-change {
     background-color: lightgray;
 }
-
-/* button.navbar-toggler {
-    background-color: white;
-}
-
-span.button.navbar-toggler-icon {
-    background-color: black;
-} */
-
-.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-    background-color: rgb(180, 49, 49) !important;
-}

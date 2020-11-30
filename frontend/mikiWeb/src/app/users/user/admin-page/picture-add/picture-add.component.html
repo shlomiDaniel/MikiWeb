@@ -4,7 +4,6 @@
       </div>
     </div>
     <form (submit)="addPictureToStore(ngModelAddPicToStore)" #ngModelAddPicToStore="ngForm">
-
       <div class="mt-2 border border-dark p-2">
         <div class="row mb-3 justify-content-center">
           <p class="h4">פרטי היצירה</p>
@@ -12,20 +11,38 @@
         <div class="row">
           <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">שם היצירה:</label>
           <input type="text" class="form-control col-3" placeholder="שם יצירה">
+          <div class="row">
+            <label class="text-left" style="font-size: 1.3rem;">בחירה:</label>
+            <img id="pic" class="pr-1" style=" width: 275px; height: 200px;" />
+          </div>
+        </div>
+        <div class="row mt-2">
           <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">מספר קטגוריה:</label>
           <input type="text" class="form-control col-3" placeholder="מספר קטגוריה">
         </div>
         <div class="row mt-2">
           <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">מחיר:</label>
           <input type="text" class="form-control col-3" placeholder="ש״ח">
+        </div>
+        <div class="row mt-2">
           <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">קיים במלאי:</label>
           <input type="text" class="form-control col-3" placeholder="אחליף את זה כן או לא">
         </div>
         <div class="row mt-2">
           <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">רחוב - x:</label>
           <input type="text" class="form-control col-3" placeholder="ס״מ">
+        </div>
+        <div class="row mt-2">
           <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">אורך - y:</label>
           <input type="text" class="form-control col-3" placeholder="ס״מ">
+        </div>
+        <div class="row mt-2">
+          <label class="col-2 text-left ml-1" style="font-size: 1.3rem;">תצוגת היצירה:</label>
+          <div class="custom-file col-3">
+            <input type="file" class="custom-file-input" id="picload"
+              oninput="pic.src=window.URL.createObjectURL(this.files[0])">
+            <label class="custom-file-label" for="picload" data-browse="בחירה"></label>
+          </div>
         </div>
       </div>
     </form>

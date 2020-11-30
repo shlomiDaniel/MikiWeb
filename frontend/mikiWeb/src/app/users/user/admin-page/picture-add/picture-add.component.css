@@ -3,3 +3,12 @@
     color: white;
     font-family: assistant, Helvetica, sans-serif;
 }
+
+#customFile .custom-file-control:lang(en)::after {
+    content: "Select file...";
+  }
+  
+  #customFile .custom-file-control:lang(en)::before {
+    content: "Click me";
+  }
+  

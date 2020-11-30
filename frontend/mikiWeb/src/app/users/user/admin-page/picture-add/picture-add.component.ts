@@ -8,6 +8,8 @@ import { NgForm } from '@angular/forms';
 })
 export class PictureAddComponent implements OnInit {
 
+  fileName = "file";
+
   constructor() { }
 
   ngOnInit(): void {
