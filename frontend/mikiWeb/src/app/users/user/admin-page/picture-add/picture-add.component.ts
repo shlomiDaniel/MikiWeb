@@ -16,7 +16,7 @@ export class PictureAddComponent implements OnInit {
   }
 
   addPictureToStore(addPicToStoreForm: NgForm): void {
-    console.log("work in progress");
+    
   }
 
 }

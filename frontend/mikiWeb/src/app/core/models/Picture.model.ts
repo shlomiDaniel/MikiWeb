@@ -5,6 +5,6 @@ export interface PictureModel {
   imgPath: string;
   description: string;
   size_x: number;
-  size_y: number
+  size_y: number;
   inStock: number;
 }

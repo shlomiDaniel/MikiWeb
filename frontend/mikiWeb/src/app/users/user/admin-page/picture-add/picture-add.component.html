@@ -12,33 +12,34 @@
           <div class="col-sm-8">
             <div class="row">
               <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">שם היצירה:</label>
-              <input type="text" class="form-control col-5" placeholder="שם יצירה">
+              <input type="text" class="form-control col-5" placeholder="שם יצירה" name="nameofpic" ngModel>
             </div>
             <div class="row mt-2">
               <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">מספר קטגוריה:</label>
-              <input type="text" class="form-control col-5" placeholder="מספר קטגוריה">
+              <input type="text" class="form-control col-5" placeholder="מספר קטגוריה" name="categorynum" ngModel>
             </div>
             <div class="row mt-2">
               <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">מחיר:</label>
-              <input type="text" class="form-control col-5" placeholder="ש״ח">
+              <input type="text" class="form-control col-5" placeholder="ש״ח" name="nisprice" ngModel>
             </div>
             <div class="row mt-2">
               <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">קיים במלאי:</label>
-              <input type="text" class="form-control col-5" placeholder="אחליף את זה כן או לא">
+              <input type="text" class="form-control col-5" placeholder="אחליף את זה כן או לא" name="instockornot"
+                ngModel>
             </div>
             <div class="row mt-2">
               <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">רחוב - x:</label>
-              <input type="text" class="form-control col-5" placeholder="ס״מ">
+              <input type="text" class="form-control col-5" placeholder="ס״מ" name="sizex" ngModel>
             </div>
             <div class="row mt-2">
               <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">אורך - y:</label>
-              <input type="text" class="form-control col-5" placeholder="ס״מ">
+              <input type="text" class="form-control col-5" placeholder="ס״מ" name="sizey" ngModel>
             </div>
             <div class="row mt-2">
               <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">תצוגת היצירה:</label>
               <div class="custom-file col-5">
                 <input type="file" class="custom-file-input" id="picload"
-                  oninput="pic.src=window.URL.createObjectURL(this.files[0])">
+                  oninput="pic.src=window.URL.createObjectURL(this.files[0])" name="photoupload" ngModel>
                 <label class="custom-file-label" for="picload" data-browse="בחירה"></label>
               </div>
             </div>
@@ -47,6 +48,16 @@
             <label style="font-size: 1.3rem;" class=""><u>יצירה שנבחרה</u></label>
             <img id="pic" class="pr-1" style=" width: 275px; height: 200px;" />
           </div>
+        </div>
+        <hr>
+        <div class="row justify-content-center mt-2">
+          <div class="col-6 text-center">
+            <label for="art-work-description" style="font-size: 1.3rem;">תיאור היצירה</label>
+            <textarea class="form-control" id="art-work-description" rows="3" name="artworkdescription" ngModel></textarea>
+          </div>
+        </div>
+        <div class="row mt-2 justify-content-center">
+          <button class="col-1 btn btn-dark" style="background-color: black;" type="submit">הוסף</button>
         </div>
       </div>
     </form>
