@@ -1,10 +1,10 @@
 export interface PictureModel {
-  catalogNumber: number;
+  catalogNumber: string;
   name: string;
-  price: number;
+  price: string;
   imgPath: string;
   description: string;
-  size_x: number;
-  size_y: number;
-  inStock: number;
+  size_x: string;
+  size_y: string;
+  inStock: string;
 }

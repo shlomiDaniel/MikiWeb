@@ -6,15 +6,4 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PicturesService {
   constructor(private httpToBackend: HttpClient) {}
-
-  addNewPicture(
-    catalogNumber: number,
-    name: string,
-    price: number,
-    imgPath: string,
-    description: string,
-    size_x: number,
-    size_y: number,
-    inStock: number
-  ) {}
 }

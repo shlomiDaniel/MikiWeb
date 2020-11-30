@@ -5,6 +5,7 @@ const PORT = 4000;
 
 const pictureRoute = require("./routes/pictures");
 const usersRoute = require("./routes/users");
+const adminRoute = require("./routes/admin");
 
 const cors = require("cors");
 
@@ -45,3 +46,4 @@ mongoose
 //routers
 app.use("/pictures", pictureRoute);
 app.use("/users", usersRoute);
+app.use("/admin", adminRoute);
