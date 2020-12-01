@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const Picture = new Schema({
   catalogNumber: {
-    type: String,
+    type: Number,
     required: true,
   },
   name: {
@@ -10,7 +10,7 @@ const Picture = new Schema({
     required: true,
   },
   price: {
-    type: String,
+    type: Number,
     required: true,
   },
   imgPath: {
@@ -22,15 +22,15 @@ const Picture = new Schema({
     required: true,
   },
   size_x: {
-    type: String,
+    type: Number,
     required: true,
   },
   size_y: {
-    type: String,
+    type: Number,
     required: true,
   },
   inStock: {
-    type: String,
+    type: Boolean,
     required: true,
   },
 });

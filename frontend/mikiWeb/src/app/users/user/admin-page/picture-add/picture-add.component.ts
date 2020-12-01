@@ -5,16 +5,22 @@ import { AdminService } from 'src/app/core/services/admin.service';
 @Component({
   selector: 'app-picture-add',
   templateUrl: './picture-add.component.html',
-  styleUrls: ['./picture-add.component.css']
+  styleUrls: ['./picture-add.component.css'],
 })
 export class PictureAddComponent implements OnInit {
+  stack = [
+    { value: true, label: 'קיים במלאי' },
+    { value: false, label: 'לא קיים במלאי' },
+  ];
 
-  fileName = "file";
+  selectedValue: any = true;
 
-  constructor(private adminService: AdminService) { }
+  selectFileFromHtml: FileList;
+  photoName: string;
 
-  ngOnInit(): void {
-  }
+  constructor(private adminService: AdminService) {}
+
+  ngOnInit(): void {}
 
   addPictureToStore(addPicToStoreForm: NgForm): void {
     this.adminService.addNewPicture(
@@ -25,7 +31,12 @@ export class PictureAddComponent implements OnInit {
       addPicToStoreForm.value.artworkdescription,
       addPicToStoreForm.value.sizex,
       addPicToStoreForm.value.sizey,
-      addPicToStoreForm.value.instockornot,
-    )
+      addPicToStoreForm.value.instockornot
+    );
+  }
+
+  detectFiles(event) {
+    this.selectFileFromHtml = event.target.files;
+    this.photoName = this.selectFileFromHtml[0].name;
   }
 }
