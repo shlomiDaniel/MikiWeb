@@ -18,16 +18,10 @@ export class AdminService {
     size_y: number,
     inStock: boolean
   ) {
-    const pictureData: PictureModel = {
-      catalogNumber: catalogNumber,
-      name: name,
-      price: price,
-      imgPath: imgPath,
-      description: description,
-      size_x: size_x,
-      size_y: size_y,
-      inStock: inStock,
-    };
+
+    const pictureData = new FormData();
+
+
     this.httpToBackend
       .post('http://localhost:4000/admin/addpicture', pictureData)
       .subscribe((responseData) => {

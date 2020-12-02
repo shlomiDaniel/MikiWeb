@@ -1,5 +1,4 @@
 const Picture = require("../models/Pictures");
-//get all products
 
 
 exports.createNewPicture = (req, res, next) => {
@@ -29,7 +28,6 @@ exports.updatePictureData = (req, res, next) => {
   });
   res.json({ success: "updateComplete" });
 };
-
 
 exports.deletePictureFromDB = (req, res, next) => {
   Picture.findByIdAndRemove({ _id: req.params._id }).then((data) => {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { AdminService } from 'src/app/core/services/admin.service';
+import { mineType } from 'src/app/core/Validator/mime-type';
 
 @Component({
   selector: 'app-picture-add',
@@ -13,30 +14,72 @@ export class PictureAddComponent implements OnInit {
     { value: false, label: 'לא קיים במלאי' },
   ];
 
-  selectedValue: any = true;
-
-  selectFileFromHtml: FileList;
-  photoName: string;
+  ngModelAddPicToStore: FormGroup;
+  photoName = "";
+  showImageArtBeforeUploadToStore;
 
   constructor(private adminService: AdminService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.ngModelAddPicToStore = new FormGroup({
+      nameofpic: new FormControl(null, {
+        validators: [Validators.required, Validators.maxLength(1)]
+      }),
+      categorynum: new FormControl(null, {
+        validators: [Validators.required, Validators.min(0), Validators.minLength(0)]
+      }),
+      nisprice: new FormControl(null, {
+        validators: [Validators.required, Validators.min(0), Validators.minLength(0)]
+      }),
+      instockornot: new FormControl(true, {
+        validators: [Validators.required]
+      }),
+      sizex: new FormControl(null, {
+        validators: [Validators.required, Validators.min(0), Validators.minLength(0)]
+      }),
+      sizey: new FormControl(null, {
+        validators: [Validators.required, Validators.min(0), Validators.minLength(0)]
+      }),
+      artworkdescription: new FormControl(null, {
+        validators: [Validators.required, Validators.min(0), Validators.minLength(0)]
+      }),
+      photoupload: new FormControl(null, {
+        validators: [Validators.required], asyncValidators: [mineType]
+      }),
+    })
+  }
 
-  addPictureToStore(addPicToStoreForm: NgForm): void {
+  addPictureToStore(): void {
+    if(this.ngModelAddPicToStore.invalid) {
+      console.log("Error: Add art to the store");
+      return;
+    }
+
     this.adminService.addNewPicture(
-      addPicToStoreForm.value.categorynum,
-      addPicToStoreForm.value.nameofpic,
-      addPicToStoreForm.value.nisprice,
-      addPicToStoreForm.value.photoupload,
-      addPicToStoreForm.value.artworkdescription,
-      addPicToStoreForm.value.sizex,
-      addPicToStoreForm.value.sizey,
-      addPicToStoreForm.value.instockornot
+      this.ngModelAddPicToStore.value.categorynum,
+      this.ngModelAddPicToStore.value.nameofpic,
+      this.ngModelAddPicToStore.value.nisprice,
+      this.ngModelAddPicToStore.value.photoupload,
+      this.ngModelAddPicToStore.value.artworkdescription,
+      this.ngModelAddPicToStore.value.sizex,
+      this.ngModelAddPicToStore.value.sizey,
+      this.ngModelAddPicToStore.value.instockornot
     );
   }
 
-  detectFiles(event) {
-    this.selectFileFromHtml = event.target.files;
-    this.photoName = this.selectFileFromHtml[0].name;
+  chooseImageToStore(chooseImage: Event): void {
+    const imageArt = (chooseImage.target as HTMLInputElement).files[0];
+    this.ngModelAddPicToStore.patchValue({
+      photoupload: imageArt
+    });
+    this.ngModelAddPicToStore.get('photoupload').updateValueAndValidity();
+    
+    this.photoName = imageArt.name;
+
+    const readFiles = new FileReader();
+    readFiles.onload = () => {
+      this.showImageArtBeforeUploadToStore = readFiles.result;
+    }
+    readFiles.readAsDataURL(imageArt);
   }
 }

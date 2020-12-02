@@ -3,7 +3,7 @@
         <h3>הוספת תמונה לחנות</h3>
       </div>
     </div>
-    <form (submit)="addPictureToStore(ngModelAddPicToStore)" #ngModelAddPicToStore="ngForm">
+    <form [formGroup]="ngModelAddPicToStore" (submit)="addPictureToStore()">
       <div class="mt-2 border border-dark p-2">
         <div class="row mb-3 justify-content-center">
           <p class="h4">פרטי היצירה</p>
@@ -12,55 +12,59 @@
           <div class="col-sm-8">
             <div class="row">
               <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">שם היצירה:</label>
-              <input type="text" class="form-control col-5" placeholder="שם יצירה" name="nameofpic" ngModel required>
+              <input type="text" class="form-control col-5" placeholder="בחר" formControlName="nameofpic">
             </div>
             <div class="row mt-2">
               <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">מספר קטגוריה:</label>
-              <input type="number" class="form-control col-5" placeholder="מספר קטגוריה" name="categorynum" ngModel required>
+              <input type="number" class="form-control col-5" placeholder="בחר" formControlName="categorynum">
             </div>
             <div class="row mt-2">
               <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">מחיר:</label>
-              <input type="number" class="form-control col-5" placeholder="ש״ח" name="nisprice" min="0" ngModel required>
+              <input type="number" class="form-control col-5" placeholder="בחר" formControlName="nisprice">
             </div>
             <div class="row mt-2">
               <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">קיים במלאי:</label>
-              <select id="stack" name="instockornot" [(ngModel)]="selectedValue" class="col-5 border rounded text-secondary pr-2" >
-                <option *ngFor="let isInStack of stack" [ngValue]="isInStack.value" required> 
-                      {{ isInStack.label }}
+              <select id="stack" formControlName="instockornot" class="col-5 border rounded text-secondary pr-2">
+                <option *ngFor="let isInStack of stack" [ngValue]="isInStack.value">
+                  {{ isInStack.label }}
                 </option>
               </select>
             </div>
             <div class="row mt-2">
               <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">רחוב - x:</label>
-              <input type="number" class="form-control col-5"  placeholder="ס״מ" min=0 name="sizex" ngModel required>
+              <input type="number" class="form-control col-5" placeholder="בחר" formControlName="sizex">
             </div>
             <div class="row mt-2">
               <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">אורך - y:</label>
-              <input type="number" class="form-control col-5" placeholder="ס״מ" min=0 name="sizey" ngModel required>
+              <input type="number" class="form-control col-5" placeholder="בחר" formControlName="sizey">
             </div>
             <div class="row mt-2">
               <label class="col-4 text-left ml-1" style="font-size: 1.3rem;">תצוגת היצירה:</label>
               <div class="custom-file col-5">
-                <input type="file" class="custom-file-input" id="picload"
-                  oninput="pic.src=window.URL.createObjectURL(this.files[0])" name="photoupload" ngModel (change)="detectFiles($event)" required>
-                <label class="custom-file-label text-left" for="picload" data-browse="בחירה">{{ photoName }}</label>
+                <input type="file" class="custom-file-input" id="picload" #getFileFromAdminToStore
+                  (change)="chooseImageToStore($event)" required>
+                <label class="custom-file-label text-left" for="picload" data-browse="בחר">{{ this.photoName }}</label>
               </div>
             </div>
           </div>
-          <div class="col-4 p-3 text-center">
+          <div class="col-4 p-3 text-center"
+            *ngIf="showImageArtBeforeUploadToStore !== '' && showImageArtBeforeUploadToStore && ngModelAddPicToStore.get('photoupload').valid">
             <label style="font-size: 1.3rem;" class=""><u>יצירה שנבחרה</u></label>
-            <img id="pic" class="pr-1" style=" width: 275px; height: 200px;" />
+            <img [src]="showImageArtBeforeUploadToStore" [alt]="this.photoName" class="pr-1"
+              style=" width: 275px; height: 200px;" />
           </div>
         </div>
         <hr>
         <div class="row justify-content-center mt-2">
           <div class="col-6 text-center">
             <label for="art-work-description" style="font-size: 1.3rem;">תיאור היצירה</label>
-            <textarea class="form-control" id="art-work-description" rows="3" name="artworkdescription" ngModel></textarea>
+            <textarea class="form-control" id="art-work-description" rows="3"
+              formControlName="artworkdescription"></textarea>
           </div>
         </div>
         <div class="row mt-2 justify-content-center">
-          <button  [disabled]="!ngModelAddPicToStore.valid" class="col-1 btn btn-dark" style="background-color: black;" type="submit">הוסף</button>
+          <button class="col-1 btn btn-dark" style="background-color: black;" type="submit"
+            [disabled]="ngModelAddPicToStore.invalid">הוסף</button>
         </div>
       </div>
     </form>
