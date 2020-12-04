@@ -14,7 +14,6 @@ exports.createNewPicture = (req, res, next) => {
     size_y: parseFloat(req.body.size_y),
     inStock: req.body.inStock,
   });
-  console.log(picture);
   picture.save().then((data) => {
     res.status(201).json({
       picture: data,

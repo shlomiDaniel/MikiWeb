@@ -6,4 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PicturesService {
   constructor(private httpToBackend: HttpClient) {}
+
+  getPicturesAll(): void {
+    this.httpToBackend.get("http://localhost:4000/")
+  }
 }

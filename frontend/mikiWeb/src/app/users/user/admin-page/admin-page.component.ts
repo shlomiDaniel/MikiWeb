@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-page',
@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
 })
 export class AdminPageComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.router.navigate(['admin/addpicture']);
+    // this.router.navigate(['admin'], {relativeTo: this.route});
   }
 
 }

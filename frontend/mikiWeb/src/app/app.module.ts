@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PictureAddComponent } from './users/user/admin-page/picture-add/picture-add.component';
 import { AdminPageComponent } from './users/user/admin-page/admin-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PictureManagementComponent } from './users/user/admin-page/picture-management/picture-management.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     PictureAddComponent,
     AdminPageComponent,
     PageNotFoundComponent,
+    PictureManagementComponent,
   ],
   imports: [
     BrowserModule,
