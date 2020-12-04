@@ -48,7 +48,7 @@
             </div>
           </div>
           <div class="col-4 p-3 text-center"
-            *ngIf="showImageArtBeforeUploadToStore !== '' && showImageArtBeforeUploadToStore && ngModelAddPicToStore.get('photoupload').valid">
+            *ngIf="showImageArtBeforeUploadToStore !== '' && showImageArtBeforeUploadToStore && ngModelAddPicToStore.get('imgPath').valid">
             <label style="font-size: 1.3rem;" class=""><u>יצירה שנבחרה</u></label>
             <img [src]="showImageArtBeforeUploadToStore" [alt]="this.photoName" class="pr-1"
               style=" width: 275px; height: 200px;" />

@@ -1,20 +1,22 @@
 const Picture = require("../models/Pictures");
 
-
 exports.createNewPicture = (req, res, next) => {
+  //url to file on server
+  const serverUrl = req.protocol + '://' + req.get("host");
+
   const picture = new Picture({
-    catalogNumber: req.body.catalogNumber,
+    catalogNumber: parseInt(req.body.catalogNumber),
     name: req.body.name,
-    price: req.body.price,
-    imgPath: req.body.imgPath,
+    price: parseFloat(req.body.price),
+    imgPath: serverUrl + "/images/" + req.file.filename,
     description: req.body.description,
-    size_x: req.body.size_x,
-    size_y: req.body.size_y,
+    size_x: parseFloat(req.body.size_x),
+    size_y: parseFloat(req.body.size_y),
     inStock: req.body.inStock,
   });
   console.log(picture);
   picture.save().then((data) => {
-    res.status(200).json({
+    res.status(201).json({
       picture: data,
     });
   });
