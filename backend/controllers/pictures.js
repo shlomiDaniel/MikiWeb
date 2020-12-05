@@ -5,6 +5,7 @@ exports.getAllData = (req, res, next) => {
       res.status(200).json({
         pictures: data,
       });
+      console.log(data);
     });
   };
 
