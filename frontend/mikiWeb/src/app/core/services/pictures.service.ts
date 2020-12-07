@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { PictureModel } from '../models/Picture.model';
 
 @Injectable({
   providedIn: 'root',
@@ -9,12 +9,13 @@ import { PictureModel } from '../models/Picture.model';
 export class PicturesService {
   constructor(private httpToBackend: HttpClient) {}
 
-  getPicturesAllData() {
-    this.httpToBackend
+  getPicturesAllData(): Observable<any> {
+    return this.httpToBackend
       .get('http://localhost:4000/pictures/getpictures')
-      .pipe(x => {
-        console.log(x);
-        return x;
-      }).subscribe();
-    }
+      .pipe(
+        map((getArtData) => {
+          return getArtData
+        })
+      );
+  }
 }

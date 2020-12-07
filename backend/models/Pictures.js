@@ -33,6 +33,9 @@ const Picture = new Schema({
     type: Boolean,
     required: true,
   },
+  isAdmin: {
+    type: Boolean,
+  },
 });
 
 module.exports = mongoose.model("Pictures", Picture);

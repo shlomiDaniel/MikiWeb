@@ -23,7 +23,7 @@ export class PictureAddComponent implements OnInit {
   ngOnInit(): void {
     this.ngModelAddPicToStore = new FormGroup({
       nameofpic: new FormControl(null, {
-        validators: [Validators.required, Validators.maxLength(1)],
+        validators: [Validators.required, Validators.minLength(1)],
       }),
       categorynum: new FormControl(null, {
         validators: [

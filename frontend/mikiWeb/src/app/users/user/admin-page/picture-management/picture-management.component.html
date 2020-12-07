@@ -1,37 +1,26 @@
-<div class="border border-dark p-2">
-  <img class="" src="#" alt="image name" />
-    <h5 class="text-center"><u>מידע על היצירה</u></h5>
-    <div class="row">
-      <div class="col">
-        <div class="row">
-          <div class="col-3 text-right">שם היצירה:</div>
-          <label class="col-1 text-right">{{ "שם" }}</label>
-        </div>
-        <div class="row">
-          <div class="col-sm-3 text-right">מספר קטולוג:</div>
-          <label class="col-sm-4 text-right">{{ "קטלוג" }}</label>
-        </div>
-        <div class="row">
-          <div class="col-sm-3 text-right">קיים במלאי:</div>
-          <label class="col-sm-4 text-right">{{ "כן או לא" }}</label>
-        </div>
-        <div class="row">
-          <div class="col-sm-3 text-right">רחוב - x:</div>
-          <label class="col-sm-3 text-right">{{ "רחוב איקס" }}</label>
-        </div>
-        <div class="row">
-          <div class="col-sm-3 text-right">רחוב - y:</div>
-          <label class="col-sm-3 text-right">{{ "רחוב ואי" }}</label>
-        </div>
-      </div>
-      <div class="col">
-        <div class="text-center">
-          <label><u>תיאור היצירה:</u></label>
-        </div>
-        {{
-          "data data data data data data data data data data data data data data data data data data"
-        }}
-      </div>
-    </div>
-    <a href="#" class="btn btn-primary">עריכה</a>
+<div class="row justify-content-center mb-2">
+  <div class="col-4 title-color-background text-center">
+    <h3>ניהול תמונות החנות</h3>
+  </div>
+</div>
+<div class="row border border-dark p-2">
+  <div class="col-md-4">
+    <h3 class="my-3 text-center">תיאור היצירה</h3>
+    <p class="text-right">
+      {{ "מלל" }}
+    </p>
+    <h3 class="my-3 text-center">פרטי היצירה</h3>
+    <ul class="text-right">
+      <li>שם היצירה: {{ "שם" }}</li>
+      <li>מספר קטולוג: {{ "מספר" }}</li>
+      <li>מחיר: {{ "מחיר" }}</li>
+      <li>קיים במלאי: {{ "קיים או לא" }}</li>
+      <li>רחוב - X: {{ "מספר" }} ס״מ</li>
+      <li>רחוב - Y: {{ "מספר" }} ס״מ</li>
+    </ul>
+  </div>
+
+  <div class="col-md-8">
+    <img class="img-fluid" src="" alt="" />
+  </div>
 </div>
