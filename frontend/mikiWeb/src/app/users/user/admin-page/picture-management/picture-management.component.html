@@ -3,24 +3,24 @@
     <h3>ניהול תמונות החנות</h3>
   </div>
 </div>
-<div class="row border border-dark p-2">
+<div class="row border border-dark p-2 mt-2 mb-2"  *ngFor="let art of artData">
   <div class="col-md-4">
     <h3 class="my-3 text-center">תיאור היצירה</h3>
     <p class="text-right">
-      {{ "מלל" }}
+      {{ art.description }}
     </p>
     <h3 class="my-3 text-center">פרטי היצירה</h3>
     <ul class="text-right">
-      <li>שם היצירה: {{ "שם" }}</li>
-      <li>מספר קטולוג: {{ "מספר" }}</li>
-      <li>מחיר: {{ "מחיר" }}</li>
-      <li>קיים במלאי: {{ "קיים או לא" }}</li>
-      <li>רחוב - X: {{ "מספר" }} ס״מ</li>
-      <li>רחוב - Y: {{ "מספר" }} ס״מ</li>
+      <li>שם היצירה: {{ art.name }}</li>
+      <li>מספר קטולוג: {{ art.catalogNumber }}</li>
+      <li>מחיר: {{ art.price }}</li>
+      <li>{{ this.inStockFunction(this.art.inStock) }}</li>
+      <li>רחוב - X: {{ art.size_x }} ס״מ</li>
+      <li>רחוב - Y: {{ art.size_y}} ס״מ</li>
     </ul>
   </div>
 
   <div class="col-md-8">
-    <img class="img-fluid" src="" alt="" />
+    <img class="img-fluid" [src]="art.imgPath" [alt]="art.name" />
   </div>
 </div>

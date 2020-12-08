@@ -10,12 +10,18 @@ import { PicturesService } from 'src/app/core/services/pictures.service';
 export class PictureManagementComponent implements OnInit {
 
   constructor(private pictureService: PicturesService) {}
-  private artData: PictureModel[] = [];
+  artData: PictureModel[] = [];
 
   ngOnInit(): void {
     this.pictureService.getPicturesAllData().subscribe(data => {
-      this.artData[0] = data[0];
+      this.artData.push(...data);
     });
-    console.log(this.artData);
+  }
+
+  inStockFunction(stock: boolean): string {
+    if(stock === true) {
+      return 'קיים במלאי'
+    }
+    return 'לא קיים במלאי'
   }
 }
