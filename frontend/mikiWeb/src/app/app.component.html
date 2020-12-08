@@ -1,5 +1,5 @@
 <app-navbar class="fixed-top"></app-navbar>
-<section class="container" style="margin-top: 5%;">
+<section class="container" [ngStyle]="this.getStyleList()">
   <router-outlet></router-outlet>
 </section>
 <app-footer class="mt-auto"></app-footer>
